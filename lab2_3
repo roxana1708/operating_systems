@@ -1,0 +1,24 @@
+#include <fnctl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main() {
+
+	char hello[25] = "Hello, World!";
+
+	int fd = open("lab2.txt", O_RDWR | O_CREATE, 0666);
+	
+	if (fd < 0)
+	{
+		perror("Can't open file");
+		exit(1);
+	}
+	else 
+	{
+		write(fd, msg, sizeof(msg));
+	}
+	
+	close(fd)
+	return 0;
+}
